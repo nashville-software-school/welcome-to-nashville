@@ -56,15 +56,10 @@ Here's an example fetch to search restuarants in Nashville.
 
 * 1138 is the `id` for the city of Nashville
 * `entity_type` must be set to `city`
-* Your API key must be added as `user-key` to the `headers` configuration for your request
+* Your API key must be added as an `apikey` query string parameter
 
 ```js
-fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&start=first&sort=rating", {
-        headers: {
-            "Accept": "application/json",
-            "user-key": "10101010101010101010"
-        }
-    })
+fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&start=first&sort=rating&apikey=00000000000000")
     .then(r => r.json())
     .then(results => {
     })
