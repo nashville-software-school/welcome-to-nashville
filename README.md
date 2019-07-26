@@ -40,6 +40,8 @@ To help you along, here is a wireframe of how your app might look
 
 ### Eventbrite API
 
+EventBrite will create several tokens for your registered application. You need to use the private token in the URL _(see below)_.
+
 1. The `location.address=nashville` query string parameter must be in the URL.
 1. You need to specify the `Accept` header on the request
     ```js
