@@ -24,7 +24,7 @@ When the user searches for any of the four categories of things to do, the resul
 ## Professional Requirements
 
 1. Only one itinerary needs to exist at a time. If a user selects an item to add to the itinerary, and an item already exists for that category in the itinerary, then you will need to update the corresponding itinerary item in the DOM with the new data.
-1. All teammates must be using Grunt to run ESLint, and http-server during development. `json-server` should only be used if you have time to work on the stretch goal (_see below_).
+1. All teammates must be using http-server during development. `json-server` should only be used if you have time to work on the stretch goal (_see below_).
 1. Each teammate is responsible for one API module. If your group has five members, one person is responsible for the module that interacts with the DOM and the data from the API modules. In a four-person team, the team will decide how to handle the development of that module.
 1. The README for your project should include instructions on how another person can download and run the application. PRO TIP: Don't wait until the very end to create the README.
 1. DO NOT FORGET to use a `.gitignore` file to keep git from tracking your node_modules folder.
