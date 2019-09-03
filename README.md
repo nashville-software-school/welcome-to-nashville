@@ -15,6 +15,8 @@ You will be utilizing all of the skills and concepts that you've learned up to t
 1. Building DOM components
 1. Handling user events
 1. Modular code
+1. Semantic HTML
+1. [Valid HTML5](https://validator.w3.org/)
 
 ## Itinerary Builder
 
@@ -26,9 +28,10 @@ When the user searches for any of the four categories of things to do, the resul
 1. Only one itinerary needs to exist at a time. If a user selects an item to add to the itinerary, and an item already exists for that category in the itinerary, then you will need to update the corresponding itinerary item in the DOM with the new data.
 1. All teammates must be using http-server during development. `json-server` should only be used if you have time to work on the stretch goal (_see below_).
 1. Each teammate is responsible for one API module. If your group has five members, one person is responsible for the module that interacts with the DOM and the data from the API modules. In a four-person team, the team will decide how to handle the development of that module.
-1. The README for your project should include instructions on how another person can download and run the application. PRO TIP: Don't wait until the very end to create the README.
-1. DO NOT FORGET to use a `.gitignore` file to keep git from tracking your node_modules folder.
-1. Styling is strictly _secondary_, beyond necessary display formatting. Do not add any additional visual enhancements until you have a fully functional app. The goal of every member of the team is to implement functionality with JavaScript.
+1. The README for your project should include instructions on how another person can download and run the application. **PRO TIP:** Don't wait until the very end to create the README. [Readme Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+1. DO NOT FORGET to use a `.gitignore` file to keep git from tracking `.DS_Store` and if necessary API directory (stretch goal).
+1. CSS for structure is part of MVP. CSS for style (animations, colors, fonts) is _secondary_. Do not add any additional visual enhancements until you have a fully functional app. 
+1. The goal of every member of the team is to implement functionality with JavaScript.
 
 ## Visual Feature List
 
