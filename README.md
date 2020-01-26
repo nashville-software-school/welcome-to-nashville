@@ -72,11 +72,11 @@ return fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entit
 
 This API does not require an API key.
 
-### Keepying track of API Keys
+### Keeping track of API Keys
 
 _**NEVER store API Keys in Github!!!**_
 
-You will need to a separate javascript module to with `const`s to store your API Keys. The module's filename should be added to your `.gitignore` to prevent if from being added to your git repo.
+You will need to a separate JavaScript module with `const`s to store your API Keys. The module's filename should be added to your `.gitignore` to prevent if from being added to your git repo.
 
 ## Stretch Goal
 
