@@ -96,8 +96,11 @@ To start you off, here's an example of what the itinerary in your API might look
       }
 }
 ```
-
 ## Stretchier Goals
+
+Add a "more info" link to each of the Public Art search result entries. This link should open a new tab. Use the URL from the `page_link` property as the link's `href`.
+
+## Stretchiest Goals
 * Add an affordance to finalize an itinerary, and start a new one.
   * Add ability to view one or all of the itineraries
 * Instead of displaying all the search fields, search results, and itinerary list at the same time, add a nav bar or other feature(s) for hiding/showing what the user wants to view
