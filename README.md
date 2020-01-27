@@ -2,8 +2,8 @@
 
 In this app users can search for four different things to do/visit in Nashville:
 * parks -- using the Nashville [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/xbru-cfzi)
+* public art collections -- using Nashville [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/eviu-nxp6)
 * restaurants -- using the [Zomato API](https://developers.zomato.com/api)
-* meetups -- using the [Eventbrite API](https://www.eventbrite.com/developer/v3/)
 * concerts -- using the [Ticketmaster API](https://developer.ticketmaster.com/products-and-docs/apis/getting-started/)
 
 You will be utilizing all of the skills and concepts that you've learned up to this point in the course.
@@ -29,31 +29,31 @@ When the user searches for any of the four categories of things to do, the resul
 1. All teammates must be using http-server during development. `json-server` should only be used if you have time to work on the stretch goal (_see below_).
 1. Each teammate is responsible for one API module. If your group has five members, one person is responsible for the module that interacts with the DOM and the data from the API modules. In a four-person team, the team will decide how to handle the development of that module.
 1. The README for your project should include instructions on how another person can download and run the application. **PRO TIP:** Don't wait until the very end to create the README. [Readme Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-1. DO NOT FORGET to use a `.gitignore` file to keep git from tracking `.DS_Store` and if necessary API directory (stretch goal).
+1. DO NOT FORGET to use a `.gitignore` file to keep git from tracking `.DS_Store`, **your API Keys**, and, if necessary, API directory (stretch goal).
 1. CSS for structure is part of MVP. CSS for style (animations, colors, fonts) is _secondary_. Do not add any additional visual enhancements until you have a fully functional app. 
-1. The goal of every member of the team is to implement functionality with JavaScript.
+1. The goal of every member of the team is to _implement functionality with JavaScript_.
 
 ## Visual Feature List
 
 To help you along, here is a wireframe of how your app might look
 
-![welcome wireframe](./welcome_nash_wireframe2.png)
+![welcome wireframe](./welcom-to-nashville-example.png)
 
 ## Notes about the APIs
 
-### Eventbrite API
+### Ticketmaster API
 
-EventBrite will create several tokens for your registered application. You need to use the private token in the URL _(see below)_.
+The Ticketmaster API requires an `apikey` to be included in the url.
 
-1. The `location.address=nashville` query string parameter must be in the URL.
-1. You need to specify the `Accept` header on the request
-    ```js
-    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${search string}&location.address=nashville&token=${your token}`, {
-      "headers": {
-          "Accept": "application/json"
-      }
-    }
-    ```
+For example:
+```js
+const concertApi = {
+  searchForQueen() {
+    return fetch("http://app.ticketmaster.com/discovery/v1/events.json?keyword=Queen&apikey=__YOUR_API_KEY_HERE__")
+      .then(response => response.json());
+  }
+};
+```
 
 ### Zomato API
 
@@ -64,11 +64,19 @@ Here's an example fetch to search restuarants in Nashville.
 * Your API key must be added as an `apikey` query string parameter
 
 ```js
-fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&start=first&sort=rating&apikey=00000000000000")
+return fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&start=first&sort=rating&apikey=__YOUR_API_KEY_HERE__")
     .then(r => r.json())
-    .then(results => {
-    })
 ```
+
+### Nashville Metro Open Data API
+
+This API does not require an API key.
+
+### Keeping track of API Keys
+
+_**NEVER store API Keys in Github!!!**_
+
+You will need to a separate JavaScript module with `const`s to store your API Keys. The module's filename should be added to your `.gitignore` to prevent if from being added to your git repo.
 
 ## Stretch Goal
 
@@ -88,8 +96,11 @@ To start you off, here's an example of what the itinerary in your API might look
       }
 }
 ```
-
 ## Stretchier Goals
+
+Add a "more info" link to each of the Public Art search result entries. This link should open a new tab. Use the URL from the `page_link` property as the link's `href`.
+
+## Stretchiest Goals
 * Add an affordance to finalize an itinerary, and start a new one.
   * Add ability to view one or all of the itineraries
 * Instead of displaying all the search fields, search results, and itinerary list at the same time, add a nav bar or other feature(s) for hiding/showing what the user wants to view
